@@ -1,7 +1,7 @@
-import json
 from statistics import median, mean, mode
 from numpy import histogram
 
+# Sample data
 responses = [
     [
         ["1", 44],
@@ -37,17 +37,20 @@ responses = [
 def calculated_data(survey_responses):
     data_set = []
 
+    # Loop through survey responses and pull out the numerical data into a list
     for response in survey_responses:
         data_point = response[0][1]
         data_set.append(data_point)
 
+    # Reformat the histogram data to match the expected output
     hist = []
     bin_val = 0
     for d in histogram(data_set)[0]:
-        arr = [bin_val, bin_val+10, int(d)]
+        arr = [bin_val, bin_val+10, d]
         bin_val += 10
         hist.append(arr)
 
+    # Build the dict with the calculated data
     data = {
         'count': len(data_set),
         'min': min(data_set),
@@ -58,8 +61,7 @@ def calculated_data(survey_responses):
         'mode': mode(data_set),
         'histogram': hist
     }
-    json_res = json.dumps(data)
-    return json_res
+    return data
 
 
 print(calculated_data(responses))

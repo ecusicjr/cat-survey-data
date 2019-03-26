@@ -62,18 +62,18 @@ responses = [
 ]
 ```
 #
-Expected output:
+Expected output (dict):
 
-```json
+```python
 {
-  "count": 7,
-  "min": 3,
-  "max': 98,
-  "sum": 396,
-  "mean": 56.57142857142857,
-  "median": 77,
-  "mode": 77,
-  "histogram": [
+  'count': 7,
+  'min': 3,
+  'max': 98,
+  'sum': 396,
+  'mean': 56.57142857142857,
+  'median': 77,
+  'mode': 77,
+  'histogram': [
     [0, 10, 1],
     [10, 20, 1],
     [20, 30, 0],
