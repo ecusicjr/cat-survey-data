@@ -27,7 +27,7 @@ Run:
 python cat_survey_data.py
 ```
 #
-Sample input using in this exercise: 
+Sample input used in this exercise: 
 
 ```python
 responses = [
